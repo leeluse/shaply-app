@@ -2,9 +2,13 @@ package com.example.shaply_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
+
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MyListsActivity extends AppCompatActivity {
@@ -14,6 +18,7 @@ public class MyListsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_lists);
 
+
         // FooterFragment를 생성하고 추가
         FooterFragment footerFragment = new FooterFragment();
         getSupportFragmentManager()
@@ -21,22 +26,14 @@ public class MyListsActivity extends AppCompatActivity {
                 .add(R.id.footer_container, footerFragment)
                 .commit();
 
-
     }
-    // 플레이리스트 추가 버튼 onClick 이벤트 핸들러
-    public void gotoAddList(View view) {
-        Intent intent = new Intent(this, AddListActivity.class);
-        startActivity(intent);
-        finish(); // MyListsActivity 종료
-    }
-
 
     // < FOOTER >
     // 커뮤니티 버튼 onClick 이벤트 핸들러
     public void gotoCommunity(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        finish(); // MyListsActivity 종료
+        finish(); // MainActivity 종료
     }
 
     // 로그아웃 버튼 onClick 이벤트 핸들러
@@ -48,7 +45,7 @@ public class MyListsActivity extends AppCompatActivity {
     public void gotoMylists(View view) {
         Intent intent = new Intent(this, MyListsActivity.class);
         startActivity(intent);
-        finish(); // MyListsActivity 종료
+        finish(); // MainActivity 종료
     }
 
     // 로그아웃 메서드
@@ -58,7 +55,7 @@ public class MyListsActivity extends AppCompatActivity {
         // 로그아웃 후 LoginActivity로 이동
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
-        finish(); // MyListsActivity 종료
+        finish(); // MainActivity 종료
     }
 
 

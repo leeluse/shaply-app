@@ -31,12 +31,9 @@
 
     </LinearLayout>
 
-
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="500dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/box_add_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:fontFamily="@font/pretendard_bold"
         android:gravity="center_horizontal"
         android:orientation="vertical">
@@ -46,43 +43,54 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:background="@drawable/tv_addlist">
-
             <!-- 첫 번째 플레이리스트명 -->
             <EditText
-                android:id="@+id/et_listName"
+                android:id="@+id/editTextPlaylist"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:backgroundTint="@android:color/transparent"
                 android:fontFamily="@font/pretendard_bold"
                 android:gravity="center_horizontal"
                 android:hint="플레이리스트명"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#80FFFFFF"
                 android:textSize="20sp" />
         </FrameLayout>
-
-
 
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/tv_addlist">
-
+            <!-- 두 번째 타이틀명 -->
             <EditText
-                android:id="@+id/et_tag"
+                android:id="@+id/editTextTitle"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:backgroundTint="@android:color/transparent"
                 android:fontFamily="@font/pretendard_bold"
                 android:gravity="center_horizontal"
-                android:hint="태그를 입력하세요"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#80FFFFFF"
-                android:textSize="20sp" />
+                android:hint="타이틀명을 입력하세요"
+                android:textSize="20sp"
 
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tv_addlist">
+            <!-- 세 번째 가수명 -->
+            <EditText
+                android:id="@+id/editTextSinger"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/pretendard_bold"
+                android:gravity="center_horizontal"
+                android:hint="가수명을 입력하세요"
+                android:textSize="20sp"
+
+                />
         </FrameLayout>
 
 
@@ -92,59 +100,54 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:orientation="horizontal"
+
             >
-                <RadioButton
-                    android:id="@+id/btn_public"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="#858585"
-                    android:fontFamily="@font/pretendard_semibold"
-                    android:text="Private"
-                    android:textSize="16sp"
-                    android:textColor="#FFFFFF" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/r_btn">
 
                 <RadioButton
-                    android:id="@+id/btn_private"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:buttonTint="#858585"
-                    android:textSize="16sp"
+                    android:id="@+id/btn_public"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:text="Private"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </FrameLayout>
 
-                    android:fontFamily="@font/pretendard_semibold"
+            <FrameLayout
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/r_btn">
+
+                <RadioButton
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/btn_private"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_bold"
                     android:text="Public"
-                    android:textColor="#FFFFFF"
                     tools:ignore="TouchTargetSizeCheck" />
 
+            </FrameLayout>
         </RadioGroup>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+
+        <ImageButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="180dp"
-            android:gravity="center_horizontal">
-
-            <ImageButton
-                android:id="@+id/btn_prev"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#00FFFFFF"
-                android:src="@drawable/btn_prev"
-                android:onClick="gotoMylists"
-                android:layout_marginRight="70dp">
-
-            </ImageButton>
-
-            <ImageButton
-                android:id="@+id/btn_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#00FFFFFF"
-                android:onClick="gotoNextStep"
-                android:src="@drawable/btn_create_list"></ImageButton>
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/r_btn"
+            ></ImageButton>
 
 
-        </LinearLayout>
     </LinearLayout>
+
 
 </LinearLayout>
