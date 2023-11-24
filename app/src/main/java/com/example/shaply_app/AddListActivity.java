@@ -50,6 +50,7 @@ public class AddListActivity extends AppCompatActivity {
         String inputText = etTag.getText().toString();
         String[] tags = inputText.split(",");
 
+
         // Firebase 데이터베이스에 데이터 추가하기
         String key = listsReference.push().getKey(); // 새로운 키 생성
 

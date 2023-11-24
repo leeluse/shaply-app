@@ -36,9 +36,6 @@
         android:layout_height="560dp"
         android:orientation="vertical">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="460dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,18 +53,18 @@
                     android:backgroundTint="#00FFFFFF"
                     android:src="@drawable/btn_add_platlist" />
 
-                <ImageButton
-                    android:id="@+id/btn_list"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/btn_list" />
+                    android:layout_height="340dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
-
+                </ScrollView>
 
             </LinearLayout>
 
-        </ScrollView>
 
 
         <FrameLayout

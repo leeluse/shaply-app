@@ -1,0 +1,52 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <ImageButton
+        android:id="@+id/btn_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:src="@drawable/btn_list" />
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="11dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+        <!-- 플레이리스트 이름 -->
+        <TextView
+            android:id="@+id/tv_Listname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_extrabold"
+            android:text="플레이리스트명"
+            android:paddingLeft="2dp"
+            android:textSize="18sp" />
+
+        <!-- 플레이리스트 태그 -->
+        <TextView
+            android:id="@+id/tv_Tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_extrabold"
+            android:text="태그"
+            android:paddingLeft="2dp"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_Option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="옵션"
+            android:fontFamily="@font/pretendard_extrabold"
+            android:paddingLeft="2dp"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</FrameLayout>
