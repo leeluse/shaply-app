@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "733294576965",
+    "firebase_url": "https://shaply-be5c3-default-rtdb.firebaseio.com",
+    "project_id": "shaply-be5c3",
+    "storage_bucket": "shaply-be5c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733294576965:android:b77c99fb870f2e43b7aa2c",
+        "android_client_info": {
+          "package_name": "com.example.shaply_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733294576965-4elchefi91qb975ggjpfj0tkv227hhc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3ig3oE6QMHV9KSxG1YIF5_bIW02LaAZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733294576965-4elchefi91qb975ggjpfj0tkv227hhc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

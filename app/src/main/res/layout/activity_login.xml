@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/linear_gradient"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+
+    <ImageView
+        android:layout_width="316dp"
+        android:layout_height="117dp"
+        android:layout_margin="60dp"
+        android:background="@drawable/logo_before" />
+
+    <!-- Google 로그인 -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- 로그인 text -->
+        <ImageButton
+            android:id="@+id/btn_google_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/btn_login" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="Google로 시작하기"
+            android:textColor="#444444"
+            android:textSize="25sp" />
+
+    </FrameLayout>
+
+
+
+
+</LinearLayout>
