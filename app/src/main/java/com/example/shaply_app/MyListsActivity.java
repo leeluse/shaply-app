@@ -55,7 +55,7 @@ public class MyListsActivity extends AppCompatActivity {
     // -----  RecyclerView 설정 -----
     private void setupRecyclerView() {
         // PlaylistAdaper 초기화 및 RecyclerView에 연결
-        adapter = new PlaylistAdapter(new ArrayList<>(), this::onItemClick);
+        adapter = new PlaylistAdapter(new ArrayList<>());
         recyclerView.setAdapter(adapter);
     }
 
@@ -109,14 +109,6 @@ public class MyListsActivity extends AppCompatActivity {
         }
     }
 
-
-    // 플레이리스트 버튼 onClick 이벤트 핸들러
-    private void onItemClick(ListItem item) {
-        String listItemData = item.getListName();
-        Intent intent = new Intent(MyListsActivity.this, MusicActivity.class);
-        intent.putExtra("ListItemData", listItemData);
-        startActivity(intent);
-    }
 
     // 플레이리스트 추가 버튼 onClick 이벤트 핸들러
     public void gotoAddList(View v) {

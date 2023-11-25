@@ -93,28 +93,28 @@
             android:layout_marginTop="20dp"
             android:orientation="horizontal"
             >
-                <RadioButton
-                    android:id="@+id/btn_public"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="#858585"
-                    android:fontFamily="@font/pretendard_semibold"
-                    android:text="Private"
-                    android:textSize="16sp"
-                    android:textColor="#FFFFFF" />
+            <RadioButton
+                android:id="@+id/btn_public"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:buttonTint="#858585"
+                android:fontFamily="@font/pretendard_semibold"
+                android:text="Private"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF" />
 
-                <RadioButton
-                    android:id="@+id/btn_private"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:buttonTint="#858585"
-                    android:textSize="16sp"
+            <RadioButton
+                android:id="@+id/btn_private"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:buttonTint="#858585"
+                android:textSize="16sp"
 
-                    android:fontFamily="@font/pretendard_semibold"
-                    android:text="Public"
-                    android:textColor="#FFFFFF"
-                    tools:ignore="TouchTargetSizeCheck" />
+                android:fontFamily="@font/pretendard_semibold"
+                android:text="Public"
+                android:textColor="#FFFFFF"
+                tools:ignore="TouchTargetSizeCheck" />
 
         </RadioGroup>
 

@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     // -----  RecyclerView 설정 -----
     private void setupRecyclerView() {
-        adapter = new PlaylistAdapter(new ArrayList<>(), this::onItemClick);
+        adapter = new PlaylistAdapter(new ArrayList<>());
         recyclerView.setAdapter(adapter);
     }
 
@@ -92,25 +92,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // 플레이리스트 버튼 onClick 이벤트 핸들러
-    private void onItemClick(ListItem item) {
-        String listItemData = item.getListName();
-        Intent intent = new Intent(MainActivity.this, MusicActivity.class);
-        intent.putExtra("ListItemData", listItemData);
-        startActivity(intent);
-    }
-
     // ----- FOOTER -----
     // 커뮤니티 버튼 onClick 이벤트 핸들러
     public void gotoCommunity(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class); // 변경된 클래스로 수정
         startActivity(intent);
         finish();
     }
+
     // 로그아웃 버튼 onClick 이벤트 핸들러
     public void googleLogout(View view) {
         signOut();
     }
+
     // 내 리스트 버튼 onClick 이벤트 핸들러
     public void gotoMylists(View view) {
         Intent intent = new Intent(this, MyListsActivity.class);

@@ -7,6 +7,7 @@ public class ListItem {
     private String selectedText; // 플레이리스트 옵션
     private List<String> tags; // 플레이리스트 태그
     private String userUid; // 사용자 UID
+
     public ListItem(String listName, String selectedText, List<String> tags, String userUid) {
         this.listName = listName;
         this.selectedText = selectedText;
