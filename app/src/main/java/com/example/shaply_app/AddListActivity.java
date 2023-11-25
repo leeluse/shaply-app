@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -22,6 +24,9 @@ public class AddListActivity extends AppCompatActivity {
     EditText etTag;
     RadioGroup radioGroup;
     DatabaseReference listsReference;
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    FirebaseUser currentUser = mAuth.getCurrentUser();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +63,13 @@ public class AddListActivity extends AppCompatActivity {
         listData.put("listName", listName);
         listData.put("selectedText", selectedText);
         listData.put("tags", Arrays.asList(tags));
+        // 로그인 UID 처리
+        if (currentUser != null) {
+            String userUid = currentUser.getUid();
+
+            // 나머지 코드에 userUid를 데이터에 추가하는 부분을 추가할 수 있습니다.
+            listData.put("userUid", userUid);
+        }
 
         listsReference.child(key).setValue(listData);
         Intent intent = new Intent(this, MyListsActivity.class);

@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
+        android:onClick="gotoMusic"
         android:src="@drawable/btn_list" />
 
     <LinearLayout
@@ -47,6 +48,7 @@
             android:fontFamily="@font/pretendard_extrabold"
             android:paddingLeft="2dp"
             android:textSize="18sp" />
+
     </LinearLayout>
 
 </FrameLayout>

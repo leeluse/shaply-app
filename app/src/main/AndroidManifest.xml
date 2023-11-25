@@ -14,13 +14,19 @@
         android:theme="@style/Theme.Shaply_app"
         tools:targetApi="34">
         <activity
+            android:name=".MusicActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MyListsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".AddListActivity"
             android:exported="false">

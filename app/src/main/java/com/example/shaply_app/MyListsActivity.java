@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,66 +22,110 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyListsActivity extends AppCompatActivity {
+
     RecyclerView recyclerView;
-    DatabaseReference databaseReference;
     PlaylistAdapter adapter;
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    FirebaseUser currentUser = mAuth.getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_lists);
 
-        // FooterFragment를 생성하고 추가
+        initializeViews();
+        setupRecyclerView();
+        fetchUserLists();
+    }
+
+
+    // ----- 액티비티의 필요한 뷰 초기화 -----
+    private void initializeViews() {
+        // FooterFragment 추가
         FooterFragment footerFragment = new FooterFragment();
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.footer_container, footerFragment)
                 .commit();
-
-
+        // RecyclerView를 리니어와 함꼐 초기화
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
 
-        adapter = new PlaylistAdapter(new ArrayList<>());
+    // -----  RecyclerView 설정 -----
+    private void setupRecyclerView() {
+        // PlaylistAdaper 초기화 및 RecyclerView에 연결
+        adapter = new PlaylistAdapter(new ArrayList<>(), this::onItemClick);
         recyclerView.setAdapter(adapter);
+    }
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("lists");
+    // ----- 유저 정보 리스트 설정 -----
+    private void fetchUserLists() {
+        // 사용자가 존재하면
+        if (currentUser != null) {
+            // 현재 유저의 UID get
+            String userUid = currentUser.getUid();
+            // FirebaseDatabase의 lists 자식 가져오기
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("lists");
 
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            // userUID가 currentUser와 같은 데이터에 대해서 처리
+            databaseReference.orderByChild("userUid").equalTo(userUid).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
+                // 데이터가 변할 때
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    // dataList 초기화
                     List<ListItem> dataList = new ArrayList<>();
+
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        // 데이터 가져오기 및 리스트 구성
                         String listName = snapshot.child("listName").getValue(String.class);
                         String selectedText = snapshot.child("selectedText").getValue(String.class);
-                        List<String> tags = (List<String>) snapshot.child("tags").getValue();
 
+                        List<String> tags = new ArrayList<>();
+                        DataSnapshot tagsSnapshot = snapshot.child("tags");
+                        // for문을 이용해 태그 객체 데이터 하나씩 처리
+                        for (DataSnapshot tagSnapshot : tagsSnapshot.getChildren()) {
+                            String tag = tagSnapshot.getValue(String.class);
+                            tags.add(tag);
+                        }
 
+                        String uid = snapshot.child("userUid").getValue(String.class);
 
-                        ListItem listItem = new ListItem(listName, selectedText, tags);
+                        ListItem listItem = new ListItem(listName, selectedText, tags, uid);
                         dataList.add(listItem);
-
                     }
+
+                    // adapter에 DataList를 setData
                     adapter.setData(dataList);
-                    adapter.notifyDataSetChanged(); // 어댑터에 데이터 변경을 알림
+                    adapter.notifyDataSetChanged();
                 }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
+                    // 에러 처리
                     Toast.makeText(MyListsActivity.this, "Failed to get data.", Toast.LENGTH_SHORT).show();
                 }
             });
-
         }
+    }
+
+
+    // 플레이리스트 버튼 onClick 이벤트 핸들러
+    private void onItemClick(ListItem item) {
+        String listItemData = item.getListName();
+        Intent intent = new Intent(MyListsActivity.this, MusicActivity.class);
+        intent.putExtra("ListItemData", listItemData);
+        startActivity(intent);
+    }
+
     // 플레이리스트 추가 버튼 onClick 이벤트 핸들러
-    public void gotoAddList(View view) {
+    public void gotoAddList(View v) {
         Intent intent = new Intent(this, AddListActivity.class);
         startActivity(intent);
         finish(); // MyListsActivity 종료
     }
 
-
-    // < FOOTER >
+    // ----- FOOTER -----
     // 커뮤니티 버튼 onClick 이벤트 핸들러
     public void gotoCommunity(View view) {
         Intent intent = new Intent(this, MainActivity.class);

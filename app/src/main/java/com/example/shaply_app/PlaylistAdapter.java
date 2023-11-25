@@ -1,21 +1,24 @@
 package com.example.shaply_app;
 
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
 
 public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ViewHolder> {
     private List<ListItem> itemList;
+    private OnItemClickListener listener;
 
-    public PlaylistAdapter(List<ListItem> itemList) {
+    public interface OnItemClickListener {
+        void onItemClick(ListItem item);
+    }
+
+    public PlaylistAdapter(List<ListItem> itemList, OnItemClickListener listener) {
         this.itemList = itemList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -43,11 +46,21 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ViewHo
         }
         String tagsText = tagsTextBuilder.toString();
         holder.textOption.setText(tagsText); // 텍스트 설정
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemClick(item);
+                }
+            }
+        });
+
     }
 
-    // setData 메서드 추가
     public void setData(List<ListItem> itemList) {
         this.itemList = itemList;
+        notifyDataSetChanged(); // 데이터가 변경됐음을 알림
     }
 
     @Override
