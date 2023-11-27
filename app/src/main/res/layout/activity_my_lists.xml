@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="172dp"
         android:gravity="center_horizontal"
+        android:background="@android:color/transparent"
         android:orientation="vertical">
 
         <ImageView
@@ -36,37 +37,25 @@
         android:layout_height="560dp"
         android:orientation="vertical">
 
-
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/btn_add_playlist"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:backgroundTint="#00FFFFFF"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:onClick="gotoAddList"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_add_platlist" />
 
-                <ImageButton
-                    android:id="@+id/btn_add_playlist"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:onClick="gotoAddList"
-                    android:backgroundTint="#00FFFFFF"
-                    android:src="@drawable/btn_add_platlist" />
-
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="340dp">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                </ScrollView>
-
-            </LinearLayout>
-
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
 
         <FrameLayout
             android:id="@+id/footer_container"

@@ -13,11 +13,11 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="207dp"
-            android:layout_height="50dp"
-            android:layout_margin="36dp"
-            android:background="@drawable/logo_after" />
+    <ImageView
+        android:layout_width="207dp"
+        android:layout_height="50dp"
+        android:layout_margin="36dp"
+        android:src="@drawable/logo_after" />
 
 
 
@@ -29,21 +29,11 @@
         android:layout_weight="1"
         android:backgroundTint="#00FFFFFF"
         android:orientation="vertical">
-
-
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="455dp">
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-        </ScrollView>
-
         </LinearLayout>
-
-
 
         <FrameLayout
             android:id="@+id/footer_container"

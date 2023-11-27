@@ -12,7 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shaply_app"
+        android:usesCleartextTraffic="true"
         tools:targetApi="34">
+
+
+        <activity
+            android:name=".AddMusicActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".MusicActivity"
             android:exported="false">
@@ -35,7 +45,6 @@
                 android:value="" />
         </activity>
         <activity
-
             android:name=".MainActivity"
             android:exported="false">
             <meta-data
@@ -56,5 +65,6 @@
                 android:value="" />
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 </manifest>
