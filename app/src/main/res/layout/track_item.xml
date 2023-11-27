@@ -13,23 +13,25 @@
         android:gravity="center_vertical"
         android:orientation="vertical"
         android:background="@drawable/btn_list">
-    <TextView
-        android:id="@+id/text_view_track_name"
+
+
+        <TextView
+            android:id="@+id/tv_track_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_bold"
+            android:layout_marginLeft="10dp"
+            android:text="노래 제목 텍스트 뷰"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+        android:id="@+id/tv_artist_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="노래 제목 텍스트 뷰"
-        android:fontFamily="@font/pretendard_bold"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
-
-
-    <TextView
-        android:id="@+id/text_view_artist_name"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="아티스트 텍스트 뷰"
         android:fontFamily="@font/pretendard_bold"
-        android:paddingLeft="10dp"
+        android:layout_marginLeft="10dp"
         android:textSize="16sp" />
     </LinearLayout>
 

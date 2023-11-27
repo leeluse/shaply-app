@@ -44,7 +44,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="406dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ImageButton
@@ -67,33 +67,43 @@
                 android:text="#태그"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:orientation="horizontal">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:gravity="center" >
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/iv_option"
             android:gravity="center"
-            android:layout_marginRight="70dp"
-            >
+            android:padding="20dp">
 
-            <TextView
-                android:id="@+id/tv_Option"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00FFFFFF"
-                android:fontFamily="@font/pretendard_bold"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:text="옵션">
-            </TextView>
-        </LinearLayout>
+                android:layout_marginRight="70dp"
+                android:background="@drawable/iv_option"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_Option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    android:fontFamily="@font/pretendard_bold"
+                    android:text="옵션"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"></TextView>
+            </LinearLayout>
 
             <ImageButton
                 android:id="@+id/btn_prev"
