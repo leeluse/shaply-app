@@ -124,24 +124,35 @@
             android:layout_marginTop="180dp"
             android:gravity="center_horizontal">
 
-            <ImageButton
+            <TextView
                 android:id="@+id/btn_prev"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00FFFFFF"
-                android:src="@drawable/btn_prev"
+                android:background="@drawable/btn_control_list"
+                android:gravity="center"
+                android:clickable="true"
                 android:onClick="gotoMylists"
-                android:layout_marginRight="70dp">
+                android:layout_marginRight="70dp"
+                android:text="이전"
+                android:fontFamily="@font/pretendard_bold"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                />
 
-            </ImageButton>
-
-            <ImageButton
+            <TextView
                 android:id="@+id/btn_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#00FFFFFF"
-                android:onClick="gotoNextStep"
-                android:src="@drawable/btn_create_list"></ImageButton>
+                android:gravity="center"
+                android:textAlignment="center"
+                android:background="@drawable/btn_control_list"
+                android:clickable="true"
+                android:onClick="saveAdd"
+                android:fontFamily="@font/pretendard_bold"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:text="생성" />
+
 
 
         </LinearLayout>

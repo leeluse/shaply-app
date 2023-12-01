@@ -13,34 +13,38 @@
         android:gravity="center_vertical"
         android:orientation="vertical"
         android:background="@drawable/btn_list">
+
         <!-- 플레이리스트 이름 -->
         <TextView
             android:id="@+id/tv_Listname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/pretendard_bold"
+            android:layout_marginBottom="35dp"
+            android:fontFamily="@font/pretendard_extrabold"
+            android:paddingLeft="20dp"
             android:text="플레이리스트명"
-            android:paddingLeft="10dp"
-            android:textSize="18sp" />
+            android:textColor="@color/black"
+            android:textSize="25sp" />
 
         <!-- 플레이리스트 태그 -->
         <TextView
             android:id="@+id/tv_Tag"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/pretendard_bold"
             android:text="태그"
-            android:paddingLeft="10dp"
-            android:textSize="18sp" />
+            android:paddingLeft="25dp"
+            android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/tv_Option"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="옵션"
-            android:fontFamily="@font/pretendard_bold"
-            android:paddingLeft="10dp"
-            android:textSize="18sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_Option"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="옵션"-->
+<!--            android:fontFamily="@font/pretendard_bold"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:textSize="18sp" />-->
 
     </LinearLayout>
 

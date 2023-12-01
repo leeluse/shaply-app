@@ -3,36 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:fontFamily="@font/pretendard_bold"
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginVertical="10dp"
+        android:background="@drawable/btn_music"
         android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:background="@drawable/btn_list">
+        android:orientation="vertical">
 
 
         <TextView
             android:id="@+id/tv_track_name"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/pretendard_bold"
             android:layout_marginLeft="10dp"
             android:text="노래 제목 텍스트 뷰"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
-        android:id="@+id/tv_artist_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="아티스트 텍스트 뷰"
-        android:fontFamily="@font/pretendard_bold"
-        android:layout_marginLeft="10dp"
-        android:textSize="16sp" />
+            android:id="@+id/tv_artist_name"
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="아티스트 텍스트 뷰"
+            android:textSize="14sp" />
     </LinearLayout>
 
 </LinearLayout>
