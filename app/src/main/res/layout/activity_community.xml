@@ -10,22 +10,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="172dp"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:orientation="vertical">
 
     <ImageView
         android:layout_width="207dp"
         android:layout_height="50dp"
-        android:layout_margin="36dp"
-        android:src="@drawable/logo_after" />
+        android:src="@drawable/logo_after"
+        android:layout_marginVertical="15dp"/>
 
     <EditText
         android:id="@+id/edit_text"
-        android:layout_width="250dp"
-        android:layout_height="48dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/bar_search_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bar_search_tag"
         android:fontFamily="@font/pretendard_bold"
         android:textAlignment="center"
         android:textColor="#000000" />
@@ -43,16 +41,14 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
+            android:layout_height="510dp" />
 
         <FrameLayout
             android:id="@+id/footer_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom" />
+            />
 
-
+    </LinearLayout>
 
 </LinearLayout>
