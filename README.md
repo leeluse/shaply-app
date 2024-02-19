@@ -24,7 +24,7 @@
 - Language: Java, XML
 - IDE: Android Studio
 
-**음악 검 API**
+**음악 검색 API**
 
 - Last API
 
